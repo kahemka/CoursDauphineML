@@ -1,0 +1,34 @@
+Durée : 3 h - 15 min pause (2h45)
+
+- Présentation intervenants / objectifs: 5 min
+  .Plan de ce cours 
+  .Présentaion intervenants 
+  .Présentation objectifs du cours
+
+- Intéraction - Présentation des élèves : 30 min
+  . Présentation des élèves: 
+    En quelques mots - Niveau compétence 
+                       programmation / Machine Learning
+                     - Attente vis à vis du cours
+                     - Objectif Professionnel
+
+- Présentation des thèmes étudiés + évaluation : 15 min (~1 min par thèmes)
+
+- Intéraction - Qu'est ce que le machine learning ? Qu'est ce qu'on en fait
+  10 min
+
+- Histoire Machine Learning : 15 min
+- Machine learning en pratique : 5 min
+
+-Pause: (15 min)
+-Une premiere classification + Intéraction : 20min
+ e.g : Définition supervisé, non supervisé puis question sur 
+       cas concret : non supervisé ou supervisé?
+-Pour quels résultats + Intéraction : 10 min
+-Avec quels éléments + Intéraction:   10 min
+
+-Debats & actualités + Intéraction: 30 min
+AI Ethique
+AI Fairness (emploi, recommendation, polarisation)
+AI vie privée (couple , trajet uber)
+La singularité ? Ou on est dans l'AI aujourd'hui?
