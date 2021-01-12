@@ -1,0 +1,23 @@
+Durée : 3 h - 15 min pause (2h45)
+
+-  Point programmation             : 30min
+  .Revue python (installation / jupyter) 
+  .Quelques notions de programmation tbd
+
+
+- Point data (intéractif): 1h
+  .Types de données (~5 min)
+  . Focus données tabulaires (~15 min)
+  . Data processing (~20 min) 
+  . Exemples (~20 min)
+
+- Pause 15 min
+
+- Point optimisation (intéractif) : 30 min
+  . Rappels rapides : 5 min
+  . Fonctions de pertes : 10 min 
+  . KPIs (courbes roc etc) : 15 min
+ 
+- Process Machine learning : 15 min
+  .Overfitting
+  .Train test
