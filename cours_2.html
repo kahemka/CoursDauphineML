@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO -->
+    <title>Cours 2: Introduction - Data mining / Machine Learning</title>
+    <meta name="description" content="Cours 2 - ML - Miage.">
+
+    <!-- URL CANONICAL -->
+    <!-- <link rel="canonical" href="http://your-url.com/"> -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS WebSlides -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/svg-icons.css">
+
+    <!-- OG CARDS (ADD YOUR INFO) -->
+
+    <!-- FACEBOOK -->
+    <meta property="og:url" content="https://kvu.pythonanywhere.com/"> <!-- YOUR URL -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Machine Learning MIAGE- Cours 2"> <!-- EDIT -->
+    <meta property="og:description" content="Introduction au Machine Learning"> <!-- EDIT -->
+    <meta property="og:updated_time" content="2020-01-04T17:20:50"> <!-- EDIT -->
+    <meta property="og:image" content="static/images/share-webslides.jpg"> <!-- EDIT -->
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@webslides"> <!-- EDIT -->
+    <meta name="twitter:creator" content="@jlantunez"> <!-- EDIT -->
+    <meta name="twitter:title" content="Machine Learning MIDO - Cours 1"> <!-- EDIT -->
+    <meta name="twitter:description" content="Introduction au Machine Learning"> <!-- EDIT -->
+    <meta name="twitter:image" content="static/images/share-webslides.jpg"> <!-- EDIT -->
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="static/images/favicons/favicon-192.png">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+
+  </head>
+  <body>
+    <header role="banner">
+      <nav role="navigation">
+        <p class="logo"><a href="index.html" title="WebSlides">WebSlides</a></p>
+        <ul>
+          <li class="github">
+            <a rel="external" href="https://github.com/webslides/webslides" title="Github">
+              <svg class="fa-github">
+                <use xlink:href="#fa-github"></use>
+              </svg>
+              <em>WebSlides</em>
+            </a>
+          </li>
+          <li class="twitter">
+            <a rel="external" href="https://twitter.com/webslides" title="Twitter">
+              <svg class="fa-twitter">
+                <use xlink:href="#fa-twitter"></use>
+              </svg>
+              <em>@WebSlides</em>
+            </a>
+          </li>
+          <!--  <li class="dribbble"><a rel="external" href="http://dribbble.com/webslides" title="Dribbble"><svg class="fa-dribbble"><use xlink:href="#fa-dribbble"></use></svg> <em>webslides</em></a></li> -->
+        </ul>
+      </nav>
+    </header>
+
+    <main role="main">
+      <article id="webslides" class="vertical">
+        <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+
+<section>
+          <div class="wrap">
+            <div class="cta">
+              <div class="number">
+                <p><span>Cours 2</span></p>
+              </div>
+              <!--end .number -->
+              <div class="benefit">
+                <p class="text-subtitle">Paris Dauphine PSL : Data Mining/Machine Learning.</p>
+                <h3><strong>Notions Fondamentales</strong></h3>
+                <p>Mesurer la performance</p>
+                <p>Les métriques de références</p>
+                <p>L'optimisation en machine learning</p>
+				<p>La data préparation</p>
+              </div>
+              <!--end .benefit -->
+            </div>
+            <!--end .cta -->
+          </div>
+          <!-- .end .wrap -->
+        </section> -->
+        </section>
+
+
+
+      <section>
+          <div class="wrap size-50">
+            <h3>Cours 2</h3>
+            <p>Table des matières.</p>
+            <hr>
+            <ol class="text-cols">
+              <li><a target="_blank" href="#slide=9">Schéma générale</a></li>
+			  <li><a target="_blank" href="#slide=9">Classification - KPI's</a></li>
+              <li><a target="_blank" href="#slide=22">Régression - KPI's</a></li>
+              <li><a target="_blank" href="#slide=33">Fonctions de pertes</a></li>
+              <li><a target="_blank" href="#slide=36">Optimisation</a></li>
+              <li><a target="_blank" href="#slide=50">Problématiques</a></li>
+              <li><a target="_blank" href="#slide=51">Data Préparation</a></li>
+
+            </ol>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+
+
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Approche générale</strong></h3>
+                <p class="text-intro">Le machine learning est un processus itératif</p>
+                <ul>
+				<li>
+					 - Préparation des données
+				</li>
+				<li>
+					 - Application d'un algorithme prédictif
+				</li>
+				<li>
+				     - Revue de la performance
+				</li>
+				<ul>
+				<br>
+				<p>
+				Le processus itératif s'effectue après la revue de la performance de la solution étudiée.</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/process.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>KPI</strong></h3>
+                <p class="text-intro">Mesures de performance standardisées</p>
+				<p>Permet d'expliquer la performance attendue aux métiers.</p>
+				<p><b>Non supervisé:</b> KPI --> performance de l'algorithme. Concerne très rarement la solution.
+				</p>
+				<p><b>Supervisé:</b> KPI standardisés selon les cas : Classification/Régression</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/kpi_pic.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Classification - KPI's</strong></h3>
+                <p class="text-intro">Cas binaire</p>
+				<p><b>Exemples</b>: Conversion, rétention. D'autres exemples ?</p>
+				<p>Quels sont les caractéristiques importantes à surveiller?
+				</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/conf_matrix.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Classification - KPI's</strong></h3>
+                <p class="text-intro">Un peu de jargon</p>
+				<p>Les principaux KPI's</p>
+				
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/summary_class.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Classification - KPI's</strong></h3>
+                <p class="text-intro">Un peu de jargon</p>
+				<p>Erreur de type I vs Erreur de type II</p>
+				
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/error_1_error_2.jpg'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Classification - KPI's</strong></h3>
+                <p class="text-intro">Seuil de décisions</p>
+				<p>Qu'est ce qu'un seuil de décision ?</p>
+				<p>Commment le déterminer?</p>
+				
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/negatif_positif.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Classification - KPI's</strong></h3>
+                <p class="text-intro">La courbe ROC / AUC</p>
+				<p>Evaluer/Comparer des modèles de prédictions</p>
+				<p>Déterminer des seuils de décisions</p>
+				
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/courbeRoc.gif'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Classification - KPI's</strong></h3>
+                <p class="text-intro">ROC / AUC - Quizz</p>
+				<p>Quel est le meilleur modèle ?</p>
+				<p>Calcul de l'AUC d'un modèle de prédiction constant ?</p>
+				
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/curve_dilemma.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Classification - KPI's</strong></h3>
+                <p class="text-intro">Extension à plusieurs classes</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/multiclass_conf.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Régression - KPI's</strong></h3>
+                <p class="text-intro">Prédiction continue</p>
+				<p>Mesurer les erreurs commises</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/mspe_mape.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Régression - KPI's</strong></h3>
+                <p class="text-intro">Prédiction continue</p>
+				<p>Mesurer les erreurs commises</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/confiance.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Optimisation</strong></h3>
+                <p class="text-intro">La descente de gradient</p>
+				<p>Utiliser pour la résolution de nombreux algorithmes</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/gradient_descent.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Optimisation</strong></h3>
+                <p class="text-intro">La descente de gradient</p>
+				<p>Problème d'initialisation : standardisation de l'input</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/gd_normalize.jpg'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Optimisation</strong></h3>
+                <p class="text-intro">L'algorithme génétique</p>
+				<p>Une alternative pour les métriques exotiques</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/genetic_explain.jpg'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Optimisation</strong></h3>
+                <p class="text-intro">L'algorithme génétique</p>
+				<p>Trouver plusieurs solutions</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/genetic_algo.jpg'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Optimisation</strong></h3>
+                <p class="text-intro">Les problèmes</p>
+				<p>"Curse of dimension" : Quel est le problème ?</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/curse_dim.jpg'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		
+		
+		
+		
+
+
+
+      </article>
+      <!-- end article -->
+    </main>
+    <!-- end main -->
+
+   <!-- A global footer
+
+     <footer role="contentinfo">
+      <div class="wrap">
+        <p>An <a href="https://github.com/webslides/webslides">open source solution</a>, by <a href="https://twitter.com/webslides">@webslides</a>.</p>
+      </div>
+    </footer>  -->
+
+    <!-- Required -->
+    <script src="static/js/webslides.js"></script>
+    <script>
+      window.ws = new WebSlides();
+    </script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <script defer src="static/js/svg-icons.js"></script>
