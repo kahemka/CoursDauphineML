@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO -->
+    <title>Cours 3: Algorithmes "lineaires"</title>
+    <meta name="description" content="Cours 3 - ML - Miage.">
+
+    <!-- URL CANONICAL -->
+    <!-- <link rel="canonical" href="http://your-url.com/"> -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS WebSlides -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/svg-icons.css">
+
+    <!-- OG CARDS (ADD YOUR INFO) -->
+
+    <!-- FACEBOOK -->
+    <meta property="og:url" content="https://kvu.pythonanywhere.com/"> <!-- YOUR URL -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Machine Learning MIAGE- Cours 2"> <!-- EDIT -->
+    <meta property="og:description" content="Algorithmes lineaires"> <!-- EDIT -->
+    <meta property="og:updated_time" content="2020-01-04T17:20:50"> <!-- EDIT -->
+    <meta property="og:image" content="static/images/share-webslides.jpg"> <!-- EDIT -->
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@webslides"> <!-- EDIT -->
+    <meta name="twitter:creator" content="@jlantunez"> <!-- EDIT -->
+    <meta name="twitter:title" content="Machine Learning MIDO - Cours 1"> <!-- EDIT -->
+    <meta name="twitter:description" content="Introduction au Machine Learning"> <!-- EDIT -->
+    <meta name="twitter:image" content="static/images/share-webslides.jpg"> <!-- EDIT -->
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="static/images/favicons/favicon-192.png">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+
+  </head>
+  <body>
+    <header role="banner">
+      <nav role="navigation">
+        <p class="logo"><a href="index.html" title="WebSlides">WebSlides</a></p>
+        <ul>
+          <li class="github">
+            <a rel="external" href="https://github.com/webslides/webslides" title="Github">
+              <svg class="fa-github">
+                <use xlink:href="#fa-github"></use>
+              </svg>
+              <em>WebSlides</em>
+            </a>
+          </li>
+          <li class="twitter">
+            <a rel="external" href="https://twitter.com/webslides" title="Twitter">
+              <svg class="fa-twitter">
+                <use xlink:href="#fa-twitter"></use>
+              </svg>
+              <em>@WebSlides</em>
+            </a>
+          </li>
+          <!--  <li class="dribbble"><a rel="external" href="http://dribbble.com/webslides" title="Dribbble"><svg class="fa-dribbble"><use xlink:href="#fa-dribbble"></use></svg> <em>webslides</em></a></li> -->
+        </ul>
+      </nav>
+    </header>
+
+    <main role="main">
+      <article id="webslides" class="vertical">
+        <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+
+<section>
+          <div class="wrap">
+            <div class="cta">
+              <div class="number">
+                <p><span>Cours 3</span></p>
+              </div>
+              <!--end .number -->
+              <div class="benefit">
+                <p class="text-subtitle">Paris Dauphine PSL : Data Mining/Machine Learning.</p>
+                <h3><strong>Algorithmes lineaires</strong></h3>
+                <p>Linéarité et  paramétrisation</p>
+                <p>Un champ d'application étendu</p>
+                <p>Limitations</p>
+              </div>
+              <!--end .benefit -->
+            </div>
+            <!--end .cta -->
+          </div>
+          <!-- .end .wrap -->
+        </section> -->
+        </section>
+
+
+
+      <section>
+          <div class="wrap size-50">
+            <h3>Cours 3</h3>
+            <p>Table des matières.</p>
+            <hr>
+            <ol class="text-cols">
+			  <li><a target="_blank" href="#slide=9">Relation linéaire </a></li>
+              <li><a target="_blank" href="#slide=22">Paramétrisation linéaire</a></li>
+              <li><a target="_blank" href="#slide=33">La famille des GLM</a></li>
+			  <li><a target="_blank" href="#slide=33">Le maximum de vraisemblance</a></li>
+              <li><a target="_blank" href="#slide=36">Fréquentiste vs Bayesien</a></li>
+              <li><a target="_blank" href="#slide=51">Limitations & solutions</a></li>
+
+
+            </ol>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+
+
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Relation linéaire</strong></h3>
+                <p class="text-intro">Un premier exemple</p>
+                <ul>
+				<li>
+					 - Une notion de proportionalité
+				</li>
+				<li>
+					 - Combien de g de sucres pour 6 personnes ?
+				</li>
+				<ul>
+				<br>
+				<p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_recettes.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+			
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Relation linéaire</strong></h3>
+                <p class="text-intro">Quels exemples ont une relation linéaire ?</p>
+                <ul>
+				<li>
+					 - Consommation  d'essences / km ?
+				</li>
+				<li>
+					 - Spread de crédit / temps ?
+				</li>
+				<li>
+					 - Déchargement condensateur / temps ?
+				</li>
+				<li>
+					 -  Prix / m² ?
+				</li>
+				<ul>
+				<br>
+				<p> Exemples de linéarité sur plusieurs variables ?
+				</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_ex1.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Régression linéaire</strong></h3>
+                <p class="text-intro">Formalisation: système linéaire </p>
+				<p>La formalisation générale d'une régression linéaire : Y=XA</p>
+				<p>A représente la matrice des coefficients "a" appliqués aux variables (colonnes) de chaques observations (lignes) de X </p>
+				<p>Dans quel cas le système Y=XA à plus d'une solution ?</p>
+				<p>Dans quel cas le système Y=XA n'a pas de solution ?</p>
+				<p>Dans quel cas le système Y=XA a une unique solution ? Laquelle ?</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_system.gif'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Régression linéaire</strong></h3>
+                <p class="text-intro">Minimiser l'erreur </p>
+				<p>Inconsistance dans le système linéaire : quelles sont les causes ?</p>
+				<p>On pose : Y = XA + e ou e représente l'erreur</p>
+				<p>On cherche à minimiser la somme du carré des erreurs. Pourquoi ?</p>
+				<p>Quelle est la solution ?</p>
+				<p>Comment mesurer la pertinence de l'estimation ?</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_error.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Regression linéaire</strong></h3>
+                <p class="text-intro">Modification de l'espace de départ/espace d'arrivé</p>
+				<p>Exemple: regression log-linéaire - relation linéaire avec le log de la variable à prédire </p>
+				<p>Exemple: regression linéaire-log - relation linéaire de la variable à prédire avec le log de l'input</p>
+				<p>Formulation générale : Y = F(AX+b)</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_log.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Paramétrisation linéaire</strong></h3>
+                <p class="text-intro">Synthétiser les informations reçus</p>
+				<p>Modification de l'input  -> feature engineering</p>
+				<p>Modification de l'output -> changement d'espaces</p>
+				<p>Modification de l'output -> partie linéaire = partie paramétrique</p>
+				<p>Paramétrisation rapide à calculer (calcul matriciel) et dérivable</p>
+				<p>Utilisée pour les réseaux de neurones sur plusieurs couches</p>
+				<p>Classe spécifique d'algorithmes reposant sur cette paramétrisation: GLM</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_param.jpg'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>La famille des GLM</strong></h3>
+                <p class="text-intro">Une transformation particulière de l'espace d'arrivé</p>
+				<p>Une approche probabiliste: les estimations se font selon des lois de probabilités.</p>
+				<p>Construit pour estimer des coefficients linéaires à partir d'observations.</p>
+				<p>Couramment utilisé en assurance non-vie.</p>
+				<p>Champ d'applications: Probabilités d'évènements, fréquences, intensité, linéarité.</p>
+				<p>Paramétrisation définie par la fonction de lien. Qu'est-ce que la fonction de lien ?</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_link_glm.jpg'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>La famille des GLM</strong></h3>
+                <p class="text-intro">Rappel sur les probabilités</p>
+				<p>Probabilités discrètes: fonction de masse</p>
+				<p>Probabilités continues: densité</p>
+				<p>Loi de bernouilli ?</p>
+				<p>Loi de Poisson ?</p>
+				<p>Loi normale ?</p>
+				<p>Loi Gamma ?</p>
+
+			
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_law.jpg'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>La famille des GLM</strong></h3>
+                <p class="text-intro">Loi de bernouilli</p>
+				<p>Modélisation de l'occurence d'un évènement</p>
+				<p>Loi discrète</p>
+			
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_bernouilli.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>La famille des GLM</strong></h3>
+                <p class="text-intro">Loi de Poisson</p>
+				<p>Modélisation d'une somme d'évènements</p>
+				<p>Modélisation d'une fréquence si ramené à un temps</p>
+				<p>Loi discrète.</p>
+				<p>Somme de variables de bernouilli indépendantes</p>
+			
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_poisson.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>La famille des GLM</strong></h3>
+                <p class="text-intro">Loi Normale</p>
+				<p>Modélisation d'un phénomène continu et symétrique</p>
+				<p>Loi continue par défaut</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_normal.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>La famille des GLM</strong></h3>
+                <p class="text-intro">Loi Gamma</p>
+				<p>Modélisation d'un phénomène continu positif</p>
+				<p>2 notations différentes</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_gamma.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>La famille des GLM</strong></h3>
+                <p class="text-intro">Le maximum de vraisemblance</p>
+				<p>En fonction des densités/fonctions de masse choisis, différents paramètres à estimer.</p>
+				<p>Estimation fréquentiste des paramètres: Cas où les observations suivent la même loi ?</p>
+				
+			
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_mle.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>La famille des GLM</strong></h3>
+                <p class="text-intro">Retour sur la régression linéaire</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_link_glm.jpg'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>La famille des GLM</strong></h3>
+                <p class="text-intro">La régression logistique</p>
+				<p>Utilisation: probabilité d'occurence d'un évènement</p>
+				<p>Exemple: rétention, conversion ...</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_link_glm.jpg'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>La famille des GLM</strong></h3>
+                <p class="text-intro">La régression poisson</p>
+				<p>Utilisation: modèle de comptage </p>
+				<p>Exemple: Fréquence d'accidents</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_link_glm.jpg'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>La famille des GLM</strong></h3>
+                <p class="text-intro">La régression gamma</p>
+				<p>Utilisation: modèle d'intensité </p>
+				<p>Exemple: Coûts des accidents</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_link_glm.jpg'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+		
+		
+		
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Bayesien vs Frequentiste</strong></h3>
+                <p class="text-intro">MAP: une généralisation du MLE</p>
+				<p>Intéressant sur des petits échantillons</p>
+				<p>Converge vers l'approche fréquentiste (Bernstein-Von Mises)</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_map.jpg'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Limitations & Solutions</strong></h3>
+                <p class="text-intro">La pénalisation</p>
+				<p>Intéressant sur des petits échantillons</p>
+				<p>Converge vers l'approche fréquentiste (Bernstein-Von Mises)</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <figure>
+                  <img src='static/images/lin_lasso.png'>
+                </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+	
+		
+		
+		
+		
+		
+
+
+
+      </article>
+      <!-- end article -->
+    </main>
+    <!-- end main -->
+
+   <!-- A global footer
+
+     <footer role="contentinfo">
+      <div class="wrap">
+        <p>An <a href="https://github.com/webslides/webslides">open source solution</a>, by <a href="https://twitter.com/webslides">@webslides</a>.</p>
+      </div>
+    </footer>  -->
+
+    <!-- Required -->
+    <script src="static/js/webslides.js"></script>
+    <script>
+      window.ws = new WebSlides();
+    </script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <script defer src="static/js/svg-icons.js"></script>
